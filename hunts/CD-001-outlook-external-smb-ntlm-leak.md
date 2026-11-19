@@ -29,6 +29,6 @@ DeviceNetworkEvents
 
 ## Notes
 
-Behavioral hunt based on the vendor description, not a published detection. Also consider blocking outbound SMB to the internet at the perimeter.
+Behavioral hunt based on the vendor description, not a published detection. Also consider blocking outbound SMB to the internet at the perimeter. The CrowdStrike query is the Nov 11 v2 version; it replaces the first draft, which filtered on a process name that NetworkConnectIP4 events do not carry. Sigma version: sigma/outlook-outbound-smb-external.yml.
 
 > Test in your own environment before relying on this query. CrowdStrike field names should be confirmed in your Falcon console.

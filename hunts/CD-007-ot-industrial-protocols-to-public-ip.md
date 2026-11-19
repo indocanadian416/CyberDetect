@@ -27,6 +27,6 @@ DeviceNetworkEvents
 
 ## Notes
 
-A hit means an OT device or workstation is talking to the internet. Involve your OT team.
+A hit means an OT device or workstation is talking to the internet. Involve your OT team. The CrowdStrike query is the Nov 11 v2 version (aidmaster join for host names); it replaces the first draft, which grouped by a process name that network events do not carry.
 
 > Test in your own environment before relying on this query. CrowdStrike field names should be confirmed in your Falcon console.
