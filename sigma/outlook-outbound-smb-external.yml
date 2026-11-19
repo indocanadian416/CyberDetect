@@ -1,0 +1,37 @@
+title: Outlook Outbound SMB Connection to External Address
+id: d53cf3ef-107a-43d3-8bfe-347b4d8d023b
+status: experimental
+description: >
+    Detects Outlook initiating an SMB connection to a non-private address.
+    Matches the behavior described for CVE-2026-124194, where a crafted message
+    file makes Outlook connect to an attacker-controlled location and leak the
+    user's NTLMv2 hash without a warning. Behavioral hunt, not a published detection.
+references:
+    - https://www.cisa.gov/news-events/alerts/2026/11/10/cisa-adds-six-known-exploited-vulnerabilities-catalog
+author: CyberDetect
+date: 2026/11/11
+modified: 2026/11/11
+tags:
+    - attack.credential_access
+    - attack.t1187
+    - cve.2026.124194
+logsource:
+    category: network_connection
+    product: windows
+detection:
+    selection:
+        Image|endswith: '\OUTLOOK.EXE'
+        Initiated: 'true'
+        DestinationPort:
+            - 445
+            - 139
+    filter_private:
+        DestinationIp|cidr:
+            - '10.0.0.0/8'
+            - '172.16.0.0/12'
+            - '192.168.0.0/16'
+            - '127.0.0.0/8'
+    condition: selection and not filter_private
+falsepositives:
+    - Outlook opening files from a legitimately hosted public SMB share (rare)
+level: high

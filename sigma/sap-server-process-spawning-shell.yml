@@ -1,0 +1,46 @@
+title: SAP Server Process Spawning a Shell
+id: 7f5ad73f-e89c-4d95-98d3-b16e77a47b66
+status: experimental
+description: >
+    Detects SAP kernel processes (dispatcher, ICM, Web Dispatcher, Gateway,
+    Message Server) launching a shell or download tool. Relevant to the
+    unauthenticated code execution flaws patched by SAP on 2026-11-10, which run
+    commands as the sidadm account. Process names come from SAP's architecture,
+    not a vendor detection guide; confirm them on your hosts.
+references:
+    - https://onapsis.com/event/navigating-novembers-historic-sap-security-patch-day/
+author: CyberDetect
+date: 2026/11/11
+modified: 2026/11/11
+tags:
+    - attack.initial_access
+    - attack.t1190
+    - attack.execution
+    - attack.t1059.004
+logsource:
+    category: process_creation
+    product: linux
+detection:
+    selection_parent:
+        ParentImage|endswith:
+            - '/disp+work'
+            - '/icman'
+            - '/sapwebdisp'
+            - '/gwrd'
+            - '/msg_server'
+            - '/enserver'
+    selection_child:
+        Image|endswith:
+            - '/sh'
+            - '/bash'
+            - '/dash'
+            - '/csh'
+            - '/curl'
+            - '/wget'
+            - '/nc'
+            - '/python3'
+            - '/perl'
+    condition: selection_parent and selection_child
+falsepositives:
+    - SAP administrative scripts started by a dispatcher (confirm and filter by account and command line)
+level: high
