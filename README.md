@@ -6,6 +6,16 @@ Each hunt is one Markdown file with the query name, what it hunts for, the threa
 
 ## Hunt index (newest first)
 
+### Friday, Nov 20, 2026
+
+| ID | Hunt | Category | Platforms |
+|---|---|---|---|
+| [CD-028](hunts/CD-028-cve-exposure-2026-11-20.md) | CVE Exposure Check: Nov 20 Briefing | Exposure / Vulnerability | Defender + CrowdStrike |
+| [CD-027](hunts/CD-027-ncentral-cryptominer-4everable2shell.md) | Crypto Miners on RMM Servers (N-central 4EverAble2Shell) | Impact | Defender + CrowdStrike |
+| [CD-026](hunts/CD-026-checkpoint-php2shell-tsga-esxi-wiper.md) | Check Point Gateway to ESXi Wiper (PHP2Shell, TSGA, destroy_v6) | Initial Access / Impact | Defender + Sentinel + CrowdStrike |
+| [CD-025](hunts/CD-025-vcenter-vmdir-auth-bypass-armory-castle.md) | vCenter Directory Service Abuse (CVE-2026-123890, ARMORY CASTLE) | Initial Access / Credential Access | Defender + Sentinel + CrowdStrike |
+| [CD-008](hunts/CD-008-ransomware-precursors.md) | Ransomware Precursors *(reused)* | Impact | Defender + CrowdStrike |
+
 ### Thursday, Nov 19, 2026
 
 | ID | Hunt | Category | Platforms |
@@ -36,7 +46,7 @@ Each hunt is one Markdown file with the query name, what it hunts for, the threa
 | [CD-011](hunts/CD-011-siemens-software-center-dll-sideload.md) | Siemens Software Center DLL Side-Loading | Execution / Defense Evasion | Defender + CrowdStrike |
 | [CD-010](hunts/CD-010-clickfix-run-dialog-finger.md) | ClickFix: Commands From the Run Dialog and finger.exe Abuse | Execution | Defender + CrowdStrike |
 | [CD-009](hunts/CD-009-cpguard-supply-chain-script-execution.md) | cPGuard Processes Downloading or Running Scripts | Supply Chain | Defender + CrowdStrike |
-| [CD-008](hunts/CD-008-ransomware-precursors.md) | Ransomware Precursors (Shadow Copy Deletion, Log Clearing, Recovery Disable) *(reused 11-12, 11-19)* | Impact | Defender + CrowdStrike |
+| [CD-008](hunts/CD-008-ransomware-precursors.md) | Ransomware Precursors (Shadow Copy Deletion, Log Clearing, Recovery Disable) *(reused 11-12, 11-19, 11-20)* | Impact | Defender + CrowdStrike |
 | [CD-007](hunts/CD-007-ot-industrial-protocols-to-public-ip.md) | OT: Industrial Protocols Going to Public IPs | OT / ICS | Defender + CrowdStrike |
 | [CD-006](hunts/CD-006-sshd-spawning-shells.md) | SSH Sessions Spawning Shells (Rare Accounts) *(reused 11-12)* | Initial Access / Exploitation | Defender + CrowdStrike |
 | [CD-005](hunts/CD-005-sap-processes-spawning-shells.md) | SAP Kernel Processes Spawning Shells *(reused 11-12)* | Initial Access / Exploitation | Defender + CrowdStrike |
@@ -46,6 +56,19 @@ Each hunt is one Markdown file with the query name, what it hunts for, the threa
 | [CD-001](hunts/CD-001-outlook-external-smb-ntlm-leak.md) | Outlook Connecting to External SMB (NTLM Hash Leak) | Credential Access | Defender + CrowdStrike |
 
 ## CVE index (newest first)
+
+### 2026-11-20
+
+| CVE | Product / issue | Hunts |
+|---|---|---|
+| CVE-2026-123890 | VMware vCenter vmdir auth bypass (exploited as zero-day per Google; not in KEV as of Nov 20) | CD-025, CD-028 |
+| CVE-2026-123891, CVE-2026-123892, CVE-2026-123893 | VMware SDDC Manager SQLi / command injection / root escalation | CD-028 |
+| CVE-2026-123894 | VMware Tools for Windows SAML bypass | CD-028 |
+| CVE-2026-102764 | BeyondTrust Remote Support (KEV; initial access in vCenter intrusion) | CD-025, CD-028 |
+| CVE-2026-109618, CVE-2026-109619 | PHP2Shell (KEV; Check Point gateway intrusions) | CD-026, CD-028 |
+| CVE-2026-123039 | Check Point Gaia DynamicCLI root escalation (KEV) | CD-026, CD-028 |
+| CVE-2026-115560 | PHP session serializer RCE (fixed Nov 19) | CD-028 |
+| CVE-2026-129271, CVE-2026-129272, CVE-2026-129286 | N-central HF3 (public PoC) | CD-027, CD-028 |
 
 ### 2026-11-19
 
@@ -109,8 +132,8 @@ Each hunt is one Markdown file with the query name, what it hunts for, the threa
 
 ## Suggested run order
 
-1. The newest **CVE exposure check** (CD-024, then CD-023, CD-022), to see which hosts are affected at all.
-2. Hunts for confirmed-exploited threats: CD-016, CD-017, CD-019, CD-021, CD-012, CD-013, CD-003, CD-001.
+1. The newest **CVE exposure check** (CD-028, then CD-024, CD-023, CD-022), to see which hosts are affected at all.
+2. Hunts for confirmed-exploited threats: CD-025, CD-026, CD-027, CD-016, CD-017, CD-019, CD-021, CD-012, CD-013, CD-003, CD-001.
 3. Supply-chain checks: CD-018, CD-015, CD-009.
 4. Standing hunts: CD-008 (ransomware precursors), CD-007 (OT exposure), CD-020 and CD-004 (identity).
 
@@ -119,18 +142,18 @@ Each hunt is one Markdown file with the query name, what it hunts for, the threa
 ```
 CyberDetect/
 ├── README.md
-├── hunts/      one file per hunt (CD-001 … CD-024)
+├── hunts/      one file per hunt (CD-001 … CD-028), with its own newest-first README index
 └── sigma/      vendor-agnostic Sigma rules
 ```
 
-New hunts get the next CD number and are listed at the top of the index under their briefing date. A query reused on a later day keeps its original ID.
+New hunts get the next CD number and are listed at the top of the index (here and in [hunts/README.md](hunts/README.md)) under their briefing date. A query reused on a later day keeps its original ID.
 
 ## Before you run a query
 
 - **Defender:** table names follow the Defender XDR advanced hunting schema. `EntraIdSpnSignInEvents` needs Entra ID P2. Queries labelled *Sentinel* need the matching data connector (Entra ID, AWS CloudTrail, Windows Security Events).
 - **CrowdStrike:** event names were checked against the Falcon Events Data Dictionary; some field names are unverified. Confirm fields in your Falcon console. Network events carry no host name, so several queries join `aidmaster` for `ComputerName`.
-- **IOC sweeps** (CD-013, CD-017) go stale quickly. Keep lookbacks short and re-check indicators before blocking.
-- Appliances (Barracuda, SonicWall, Fortinet, Synology, SAP gateways) often run no EDR agent; check their own logs.
+- **IOC sweeps** (CD-013, CD-017, CD-026) go stale quickly. Keep lookbacks short and re-check indicators before blocking.
+- Appliances (Barracuda, SonicWall, Fortinet, Synology, SAP gateways, Check Point, vCenter, ESXi) often run no EDR agent; check their own logs.
 - Every query is a hunting starting point, not a tuned production detection. Baseline, tune and test before use.
 
 ## Disclaimer
