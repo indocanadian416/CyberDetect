@@ -7,6 +7,22 @@ Full CVE index and run order: [main README](../README.md).
 ## Hunt index (newest first)
 
 
+### Sunday, Nov 22, 2026
+
+| ID | Hunt | Category | Platforms |
+|---|---|---|---|
+| [CD-038](CD-038-cve-exposure-2026-11-22.md) | CVE Exposure Check: Nov 22 Briefing | Exposure / Vulnerability | Defender + CrowdStrike |
+| [CD-037](CD-037-tomcat-tribes-cluster-unknown-node-cve-2026-133325.md) | Apache Tomcat Cluster (Tribes) Connections From Unknown Nodes (CVE-2026-133325) | Initial Access / Credential Access | Defender + CrowdStrike |
+| [CD-036](CD-036-entra-connect-health-tenant-contact-admin-changes.md) | Entra Tenant Contact, Connect Health and Admin Changes (Connect Health API Exposure) | Cloud Identity | Sentinel + Defender + CrowdStrike NG-SIEM |
+| [CD-035](CD-035-email-bombing-teams-fake-it-support-remote-access.md) | Email Bombing Followed by External Teams "IT Support" and Remote-Access Tools | Initial Access / Social Engineering | Defender + CrowdStrike |
+| [CD-034](CD-034-softether-vpn-bridge-webworm-ntmonitor.md) | Rogue SoftEther VPN Bridge (Webworm "NtMonitor VPN") | Command and Control / Persistence | Defender + CrowdStrike |
+| [CD-033](CD-033-ghostscript-imagemagick-cups-spawning-shells-upload2shell.md) | Ghostscript / ImageMagick / CUPS Spawning Shells (Upload2Shell, CVE-2026-125396) | Initial Access / Exploitation | Defender + CrowdStrike |
+| [CD-031](CD-031-ruby-rails-gitlab-spawning-shells-ruby2shell.md) | Ruby / Rails / GitLab Processes Spawning Shells *(reused: GitLab CVE-2026-110264 EPSS spike)* | Initial Access / Exploitation | Defender + CrowdStrike |
+| [CD-029](CD-029-cisco-expressway-cve-2026-76466-lateral-movement.md) | Cisco Expressway Cluster Takeover *(reused; KEV due Nov 23)* | Initial Access / Lateral Movement | Sentinel + Defender + CrowdStrike |
+| [CD-025](CD-025-vcenter-vmdir-auth-bypass-armory-castle.md) | vCenter Directory Service Abuse *(reused; KEV due Nov 23)* | Initial Access / Credential Access | Defender + Sentinel + CrowdStrike |
+| [CD-016](CD-016-java-app-servers-spawning-shells.md) | Java Application Servers Spawning Shells *(reused: Tomcat, Roller, SAP NetWeaver Java)* | Initial Access / Exploitation | Defender + CrowdStrike |
+| [CD-008](CD-008-ransomware-precursors.md) | Ransomware Precursors *(reused)* | Impact | Defender + CrowdStrike |
+
 ### Saturday, Nov 21, 2026
 
 | ID | Hunt | Category | Platforms |
