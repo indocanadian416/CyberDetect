@@ -7,6 +7,18 @@ Full CVE index and run order: [main README](../README.md).
 ## Hunt index (newest first)
 
 
+### Saturday, Nov 21, 2026
+
+| ID | Hunt | Category | Platforms |
+|---|---|---|---|
+| [CD-032](CD-032-cve-exposure-2026-11-21.md) | CVE Exposure Check: Nov 21 Briefing | Exposure / Vulnerability | Defender + CrowdStrike |
+| [CD-031](CD-031-ruby-rails-gitlab-spawning-shells-ruby2shell.md) | Ruby / Rails / GitLab Processes Spawning Shells (Ruby2Shell) | Initial Access / Exploitation | Defender + CrowdStrike |
+| [CD-030](CD-030-python-startup-persistence-monai-label-ai-agent.md) | Python Startup-File Persistence and Reverse Shells (MONAI Label, Cairn AI agents) | Persistence / Execution | Defender + CrowdStrike |
+| [CD-029](CD-029-cisco-expressway-cve-2026-76466-lateral-movement.md) | Cisco Expressway Cluster Takeover and Lateral Movement (CVE-2026-76466) | Initial Access / Lateral Movement | Sentinel + Defender + CrowdStrike |
+| [CD-025](CD-025-vcenter-vmdir-auth-bypass-armory-castle.md) | vCenter Directory Service Abuse *(reused; now in KEV)* | Initial Access / Credential Access | Defender + Sentinel + CrowdStrike |
+| [CD-016](CD-016-java-app-servers-spawning-shells.md) | Java Application Servers Spawning Shells *(reused: Apache Roller, SAP NetWeaver Java)* | Initial Access / Exploitation | Defender + CrowdStrike |
+| [CD-008](CD-008-ransomware-precursors.md) | Ransomware Precursors *(reused)* | Impact | Defender + CrowdStrike |
+
 ### Friday, Nov 20, 2026
 
 | ID | Hunt | Category | Platforms |
@@ -47,7 +59,7 @@ Full CVE index and run order: [main README](../README.md).
 | [CD-011](CD-011-siemens-software-center-dll-sideload.md) | Siemens Software Center DLL Side-Loading | Execution / Defense Evasion | Defender + CrowdStrike |
 | [CD-010](CD-010-clickfix-run-dialog-finger.md) | ClickFix: Commands From the Run Dialog and finger.exe Abuse | Execution | Defender + CrowdStrike |
 | [CD-009](CD-009-cpguard-supply-chain-script-execution.md) | cPGuard Processes Downloading or Running Scripts | Supply Chain | Defender + CrowdStrike |
-| [CD-008](CD-008-ransomware-precursors.md) | Ransomware Precursors (Shadow Copy Deletion, Log Clearing, Recovery Disable) *(reused 11-12, 11-19, 11-20)* | Impact | Defender + CrowdStrike |
+| [CD-008](CD-008-ransomware-precursors.md) | Ransomware Precursors (Shadow Copy Deletion, Log Clearing, Recovery Disable) *(reused 11-12, 11-19, 11-20, 11-21)* | Impact | Defender + CrowdStrike |
 | [CD-007](CD-007-ot-industrial-protocols-to-public-ip.md) | OT: Industrial Protocols Going to Public IPs | OT / ICS | Defender + CrowdStrike |
 | [CD-006](CD-006-sshd-spawning-shells.md) | SSH Sessions Spawning Shells (Rare Accounts) *(reused 11-12)* | Initial Access / Exploitation | Defender + CrowdStrike |
 | [CD-005](CD-005-sap-processes-spawning-shells.md) | SAP Kernel Processes Spawning Shells *(reused 11-12)* | Initial Access / Exploitation | Defender + CrowdStrike |

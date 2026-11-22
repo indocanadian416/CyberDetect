@@ -6,6 +6,18 @@ Each hunt is one Markdown file with the query name, what it hunts for, the threa
 
 ## Hunt index (newest first)
 
+### Saturday, Nov 21, 2026
+
+| ID | Hunt | Category | Platforms |
+|---|---|---|---|
+| [CD-032](hunts/CD-032-cve-exposure-2026-11-21.md) | CVE Exposure Check: Nov 21 Briefing | Exposure / Vulnerability | Defender + CrowdStrike |
+| [CD-031](hunts/CD-031-ruby-rails-gitlab-spawning-shells-ruby2shell.md) | Ruby / Rails / GitLab Processes Spawning Shells (Ruby2Shell) | Initial Access / Exploitation | Defender + CrowdStrike |
+| [CD-030](hunts/CD-030-python-startup-persistence-monai-label-ai-agent.md) | Python Startup-File Persistence and Reverse Shells (MONAI Label, Cairn AI agents) | Persistence / Execution | Defender + CrowdStrike |
+| [CD-029](hunts/CD-029-cisco-expressway-cve-2026-76466-lateral-movement.md) | Cisco Expressway Cluster Takeover and Lateral Movement (CVE-2026-76466) | Initial Access / Lateral Movement | Sentinel + Defender + CrowdStrike |
+| [CD-025](hunts/CD-025-vcenter-vmdir-auth-bypass-armory-castle.md) | vCenter Directory Service Abuse *(reused; now in KEV)* | Initial Access / Credential Access | Defender + Sentinel + CrowdStrike |
+| [CD-016](hunts/CD-016-java-app-servers-spawning-shells.md) | Java Application Servers Spawning Shells *(reused: Apache Roller, SAP NetWeaver Java)* | Initial Access / Exploitation | Defender + CrowdStrike |
+| [CD-008](hunts/CD-008-ransomware-precursors.md) | Ransomware Precursors *(reused)* | Impact | Defender + CrowdStrike |
+
 ### Friday, Nov 20, 2026
 
 | ID | Hunt | Category | Platforms |
@@ -46,7 +58,7 @@ Each hunt is one Markdown file with the query name, what it hunts for, the threa
 | [CD-011](hunts/CD-011-siemens-software-center-dll-sideload.md) | Siemens Software Center DLL Side-Loading | Execution / Defense Evasion | Defender + CrowdStrike |
 | [CD-010](hunts/CD-010-clickfix-run-dialog-finger.md) | ClickFix: Commands From the Run Dialog and finger.exe Abuse | Execution | Defender + CrowdStrike |
 | [CD-009](hunts/CD-009-cpguard-supply-chain-script-execution.md) | cPGuard Processes Downloading or Running Scripts | Supply Chain | Defender + CrowdStrike |
-| [CD-008](hunts/CD-008-ransomware-precursors.md) | Ransomware Precursors (Shadow Copy Deletion, Log Clearing, Recovery Disable) *(reused 11-12, 11-19, 11-20)* | Impact | Defender + CrowdStrike |
+| [CD-008](hunts/CD-008-ransomware-precursors.md) | Ransomware Precursors (Shadow Copy Deletion, Log Clearing, Recovery Disable) *(reused 11-12, 11-19, 11-20, 11-21)* | Impact | Defender + CrowdStrike |
 | [CD-007](hunts/CD-007-ot-industrial-protocols-to-public-ip.md) | OT: Industrial Protocols Going to Public IPs | OT / ICS | Defender + CrowdStrike |
 | [CD-006](hunts/CD-006-sshd-spawning-shells.md) | SSH Sessions Spawning Shells (Rare Accounts) *(reused 11-12)* | Initial Access / Exploitation | Defender + CrowdStrike |
 | [CD-005](hunts/CD-005-sap-processes-spawning-shells.md) | SAP Kernel Processes Spawning Shells *(reused 11-12)* | Initial Access / Exploitation | Defender + CrowdStrike |
@@ -56,6 +68,20 @@ Each hunt is one Markdown file with the query name, what it hunts for, the threa
 | [CD-001](hunts/CD-001-outlook-external-smb-ntlm-leak.md) | Outlook Connecting to External SMB (NTLM Hash Leak) | Credential Access | Defender + CrowdStrike |
 
 ## CVE index (newest first)
+
+### 2026-11-21
+
+| CVE | Product / issue | Hunts |
+|---|---|---|
+| CVE-2026-123890 | VMware vCenter vmdir auth bypass (**KEV Nov 20**, due Nov 23) | CD-025, CD-032 |
+| CVE-2026-76466 | Cisco Expressway clustered root RCE (KEV Nov 20, due Nov 23; F6 incident) | CD-029, CD-032 |
+| CVE-2025-42884 | SAP NetWeaver Enterprise Portal JNDI injection (KEV Nov 20, due Nov 23) | CD-016, CD-032 |
+| CVE-2026-129448 | Apache Roller XML-RPC deserialization (KEV Nov 20, due Nov 23) | CD-016, CD-032 |
+| CVE-2026-133968 | MONAI Label path traversal, exploited by Cairn AI agents (not in KEV, no patched release) | CD-030, CD-032 |
+| CVE-2026-132825 | Ruby2Shell, Ruby String case conversion overflow (public PoC) | CD-031, CD-032 |
+| CVE-2026-123637, CVE-2026-121805, CVE-2026-120722, CVE-2026-120292, CVE-2026-120285, CVE-2026-116953 | F5 BIG-IP TMM stack overflows (DoS, possible RCE) | CD-032 |
+| CVE-2026-126822 | F5 BIG-IP APM SAML SP TMM crash | CD-032 |
+| CVE-2026-129975 | GPGME long user ID memory bug | CD-032 |
 
 ### 2026-11-20
 
@@ -132,9 +158,9 @@ Each hunt is one Markdown file with the query name, what it hunts for, the threa
 
 ## Suggested run order
 
-1. The newest **CVE exposure check** (CD-028, then CD-024, CD-023, CD-022), to see which hosts are affected at all.
-2. Hunts for confirmed-exploited threats: CD-025, CD-026, CD-027, CD-016, CD-017, CD-019, CD-021, CD-012, CD-013, CD-003, CD-001.
-3. Supply-chain checks: CD-018, CD-015, CD-009.
+1. The newest **CVE exposure check** (CD-032, then CD-028, CD-024, CD-023, CD-022), to see which hosts are affected at all.
+2. Hunts for confirmed-exploited threats: CD-029, CD-025, CD-030, CD-026, CD-027, CD-016, CD-017, CD-019, CD-021, CD-012, CD-013, CD-003, CD-001.
+3. Public PoC, no exploitation reported yet: CD-031 (Ruby2Shell). Supply-chain checks: CD-018, CD-015, CD-009.
 4. Standing hunts: CD-008 (ransomware precursors), CD-007 (OT exposure), CD-020 and CD-004 (identity).
 
 ## Repository layout
@@ -142,7 +168,7 @@ Each hunt is one Markdown file with the query name, what it hunts for, the threa
 ```
 CyberDetect/
 ├── README.md
-├── hunts/      one file per hunt (CD-001 … CD-028), with its own newest-first README index
+├── hunts/      one file per hunt (CD-001 … CD-032), with its own newest-first README index
 └── sigma/      vendor-agnostic Sigma rules
 ```
 
@@ -152,8 +178,8 @@ New hunts get the next CD number and are listed at the top of the index (here an
 
 - **Defender:** table names follow the Defender XDR advanced hunting schema. `EntraIdSpnSignInEvents` needs Entra ID P2. Queries labelled *Sentinel* need the matching data connector (Entra ID, AWS CloudTrail, Windows Security Events).
 - **CrowdStrike:** event names were checked against the Falcon Events Data Dictionary; some field names are unverified. Confirm fields in your Falcon console. Network events carry no host name, so several queries join `aidmaster` for `ComputerName`.
-- **IOC sweeps** (CD-013, CD-017, CD-026) go stale quickly. Keep lookbacks short and re-check indicators before blocking.
-- Appliances (Barracuda, SonicWall, Fortinet, Synology, SAP gateways, Check Point, vCenter, ESXi) often run no EDR agent; check their own logs.
+- **IOC sweeps** (CD-013, CD-017, CD-026, CD-029) go stale quickly. Keep lookbacks short and re-check indicators before blocking.
+- Appliances (Barracuda, SonicWall, Fortinet, Synology, SAP gateways, Check Point, vCenter, ESXi, Cisco Expressway, F5 BIG-IP) often run no EDR agent; check their own logs.
 - Every query is a hunting starting point, not a tuned production detection. Baseline, tune and test before use.
 
 ## Disclaimer
