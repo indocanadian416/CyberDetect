@@ -7,6 +7,20 @@ Full CVE index and run order: [main README](../README.md).
 ## Hunt index (newest first)
 
 
+### Monday, Nov 23, 2026
+
+| ID | Hunt | Category | Platforms |
+|---|---|---|---|
+| [CD-041](CD-041-cve-exposure-2026-11-23.md) | CVE Exposure Check: Nov 23 Briefing | Exposure / Vulnerability | Defender + CrowdStrike |
+| [CD-040](CD-040-autonomous-ai-pentest-framework-intrusion-cairn-iocs-spray.md) | Autonomous AI Pentest-Framework Intrusions (Cairn / CL-STA-1238 / Operation Snowball): IOCs, Spraying, Fast Admin Creation | Initial Access / Credential Access | Sentinel + Defender + CrowdStrike |
+| [CD-039](CD-039-iis-w3wp-idunno-anticsrf-deserialization-cve-2026-131914.md) | IIS Worker Process Exploitation via Idunno.AntiCsrf Deserialization (CVE-2026-131914) | Initial Access / Exploitation | Defender + Sentinel + CrowdStrike |
+| [CD-033](CD-033-ghostscript-imagemagick-cups-spawning-shells-upload2shell.md) | Ghostscript / ImageMagick / CUPS Spawning Shells *(reused: Upload2Shell)* | Initial Access / Exploitation | Defender + CrowdStrike |
+| [CD-029](CD-029-cisco-expressway-cve-2026-76466-lateral-movement.md) | Cisco Expressway Cluster Takeover *(reused; KEV due today)* | Initial Access / Lateral Movement | Sentinel + Defender + CrowdStrike |
+| [CD-025](CD-025-vcenter-vmdir-auth-bypass-armory-castle.md) | vCenter Directory Service Abuse *(reused; KEV due today)* | Initial Access / Credential Access | Defender + Sentinel + CrowdStrike |
+| [CD-016](CD-016-java-app-servers-spawning-shells.md) | Java Application Servers Spawning Shells *(reused: SAP NetWeaver EP, Roller; KEV due today)* | Initial Access / Exploitation | Defender + CrowdStrike |
+| [CD-014](CD-014-web-server-spawning-shells.md) | Web Server Processes Spawning Shells *(reused: IIS / AntiCsrf)* | Initial Access / Exploitation | Defender + CrowdStrike |
+| [CD-008](CD-008-ransomware-precursors.md) | Ransomware Precursors *(reused)* | Impact | Defender + CrowdStrike |
+
 ### Sunday, Nov 22, 2026
 
 | ID | Hunt | Category | Platforms |

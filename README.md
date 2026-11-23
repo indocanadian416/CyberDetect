@@ -6,6 +6,20 @@ Each hunt is one Markdown file with the query name, what it hunts for, the threa
 
 ## Hunt index (newest first)
 
+### Monday, Nov 23, 2026
+
+| ID | Hunt | Category | Platforms |
+|---|---|---|---|
+| [CD-041](hunts/CD-041-cve-exposure-2026-11-23.md) | CVE Exposure Check: Nov 23 Briefing | Exposure / Vulnerability | Defender + CrowdStrike |
+| [CD-040](hunts/CD-040-autonomous-ai-pentest-framework-intrusion-cairn-iocs-spray.md) | Autonomous AI Pentest-Framework Intrusions (Cairn / CL-STA-1238 / Operation Snowball): IOCs, Spraying, Fast Admin Creation | Initial Access / Credential Access | Sentinel + Defender + CrowdStrike |
+| [CD-039](hunts/CD-039-iis-w3wp-idunno-anticsrf-deserialization-cve-2026-131914.md) | IIS Worker Process Exploitation via Idunno.AntiCsrf Deserialization (CVE-2026-131914) | Initial Access / Exploitation | Defender + Sentinel + CrowdStrike |
+| [CD-033](hunts/CD-033-ghostscript-imagemagick-cups-spawning-shells-upload2shell.md) | Ghostscript / ImageMagick / CUPS Spawning Shells *(reused: Upload2Shell)* | Initial Access / Exploitation | Defender + CrowdStrike |
+| [CD-029](hunts/CD-029-cisco-expressway-cve-2026-76466-lateral-movement.md) | Cisco Expressway Cluster Takeover *(reused; KEV due today)* | Initial Access / Lateral Movement | Sentinel + Defender + CrowdStrike |
+| [CD-025](hunts/CD-025-vcenter-vmdir-auth-bypass-armory-castle.md) | vCenter Directory Service Abuse *(reused; KEV due today)* | Initial Access / Credential Access | Defender + Sentinel + CrowdStrike |
+| [CD-016](hunts/CD-016-java-app-servers-spawning-shells.md) | Java Application Servers Spawning Shells *(reused: SAP NetWeaver EP, Roller; KEV due today)* | Initial Access / Exploitation | Defender + CrowdStrike |
+| [CD-014](hunts/CD-014-web-server-spawning-shells.md) | Web Server Processes Spawning Shells *(reused: IIS / AntiCsrf)* | Initial Access / Exploitation | Defender + CrowdStrike |
+| [CD-008](hunts/CD-008-ransomware-precursors.md) | Ransomware Precursors *(reused)* | Impact | Defender + CrowdStrike |
+
 ### Sunday, Nov 22, 2026
 
 | ID | Hunt | Category | Platforms |
@@ -74,7 +88,7 @@ Each hunt is one Markdown file with the query name, what it hunts for, the threa
 | [CD-011](hunts/CD-011-siemens-software-center-dll-sideload.md) | Siemens Software Center DLL Side-Loading | Execution / Defense Evasion | Defender + CrowdStrike |
 | [CD-010](hunts/CD-010-clickfix-run-dialog-finger.md) | ClickFix: Commands From the Run Dialog and finger.exe Abuse | Execution | Defender + CrowdStrike |
 | [CD-009](hunts/CD-009-cpguard-supply-chain-script-execution.md) | cPGuard Processes Downloading or Running Scripts | Supply Chain | Defender + CrowdStrike |
-| [CD-008](hunts/CD-008-ransomware-precursors.md) | Ransomware Precursors (Shadow Copy Deletion, Log Clearing, Recovery Disable) *(reused 11-12, 11-19, 11-20, 11-21, 11-22)* | Impact | Defender + CrowdStrike |
+| [CD-008](hunts/CD-008-ransomware-precursors.md) | Ransomware Precursors (Shadow Copy Deletion, Log Clearing, Recovery Disable) *(reused 11-12, 11-19, 11-20, 11-21, 11-22, 11-23)* | Impact | Defender + CrowdStrike |
 | [CD-007](hunts/CD-007-ot-industrial-protocols-to-public-ip.md) | OT: Industrial Protocols Going to Public IPs | OT / ICS | Defender + CrowdStrike |
 | [CD-006](hunts/CD-006-sshd-spawning-shells.md) | SSH Sessions Spawning Shells (Rare Accounts) *(reused 11-12)* | Initial Access / Exploitation | Defender + CrowdStrike |
 | [CD-005](hunts/CD-005-sap-processes-spawning-shells.md) | SAP Kernel Processes Spawning Shells *(reused 11-12)* | Initial Access / Exploitation | Defender + CrowdStrike |
@@ -84,6 +98,22 @@ Each hunt is one Markdown file with the query name, what it hunts for, the threa
 | [CD-001](hunts/CD-001-outlook-external-smb-ntlm-leak.md) | Outlook Connecting to External SMB (NTLM Hash Leak) | Credential Access | Defender + CrowdStrike |
 
 ## CVE index (newest first)
+
+### 2026-11-23
+
+| CVE | Product / issue | Hunts |
+|---|---|---|
+| CVE-2026-131914 | Idunno.AntiCsrf ASP.NET WebForms module, unkeyed ObjectStateFormatter deserialization, unauthenticated RCE (**exploited, Mandiant; no patch**, not in KEV) | CD-039, CD-041 |
+| CVE-2026-20320 | Cisco BroadWorks OCI-P XXE (KEV Nov 10; used by jailbroken AI agent in Operation Snowball) | CD-040, CD-041 |
+| CVE-2020-7961 | Liferay Portal JSON deserialization (Operation Snowball) | CD-040, CD-041 |
+| CVE-2026-123890, CVE-2026-76466, CVE-2025-42884, CVE-2026-129448 | KEV Nov 20, **due today, Nov 23** | CD-025, CD-029, CD-016, CD-041 |
+| CVE-2026-124194, CVE-2026-125350 | Outlook spoofing, Chrome XML use-after-free (KEV, due Nov 24; Chrome EPSS 0.0096 to 0.068) | CD-001, CD-041 |
+| CVE-2026-123158 | OpenSSH < 10.6p2 on musl without PAM, password auth bypass (KEV; EPSS 0.19 to 0.96) | CD-006, CD-041 |
+| CVE-2026-40217 | LiteLLM guardrails custom-code RCE (KEV Nov 18; EPSS 0.17 to 0.78) | CD-041 |
+| CVE-2026-116606, CVE-2026-111560 | Barracuda ESG auth bypass and command injection (KEV Nov 10) | CD-041 |
+| CVE-2026-50522 | SharePoint deserialization RCE (KEV; EPSS 0.03 to 0.82) | CD-041 |
+| CVE-2026-41253 | iTerm2 <= 3.6.9 SSH conductor escape-sequence code execution (public PoC) | CD-041 |
+| No CVE | Autonomous AI pentest frameworks (Cairn, CL-STA-1238, AWS medical-imaging zero-day) | CD-040 |
 
 ### 2026-11-22
 
@@ -189,8 +219,8 @@ Each hunt is one Markdown file with the query name, what it hunts for, the threa
 
 ## Suggested run order
 
-1. The newest **CVE exposure check** (CD-038, then CD-032, CD-028, CD-024, CD-023, CD-022), to see which hosts are affected at all.
-2. Hunts for confirmed-exploited threats: CD-029, CD-034, CD-035, CD-036, CD-025, CD-030, CD-026, CD-027, CD-016, CD-017, CD-019, CD-021, CD-012, CD-013, CD-003, CD-001.
+1. The newest **CVE exposure check** (CD-041, then CD-038, CD-032, CD-028, CD-024, CD-023, CD-022), to see which hosts are affected at all.
+2. Hunts for confirmed-exploited threats: CD-039, CD-040, CD-029, CD-034, CD-035, CD-036, CD-025, CD-030, CD-026, CD-027, CD-016, CD-017, CD-019, CD-021, CD-012, CD-013, CD-003, CD-001.
 3. Public PoC or research demo, no exploitation reported yet: CD-033 (Upload2Shell), CD-037 (Tomcat cluster), CD-031 (Ruby2Shell, GitLab). Supply-chain checks: CD-018, CD-015, CD-009.
 4. Standing hunts: CD-008 (ransomware precursors), CD-007 (OT exposure), CD-020 and CD-004 (identity).
 
@@ -199,7 +229,7 @@ Each hunt is one Markdown file with the query name, what it hunts for, the threa
 ```
 CyberDetect/
 ├── README.md
-├── hunts/      one file per hunt (CD-001 … CD-038), with its own newest-first README index
+├── hunts/      one file per hunt (CD-001 … CD-041), with its own newest-first README index
 └── sigma/      vendor-agnostic Sigma rules
 ```
 
@@ -209,7 +239,7 @@ New hunts get the next CD number and are listed at the top of the index (here an
 
 - **Defender:** table names follow the Defender XDR advanced hunting schema. `EntraIdSpnSignInEvents` needs Entra ID P2. Queries labelled *Sentinel* need the matching data connector (Entra ID, AWS CloudTrail, Windows Security Events).
 - **CrowdStrike:** event names were checked against the Falcon Events Data Dictionary; some field names are unverified. Confirm fields in your Falcon console. Network events carry no host name, so several queries join `aidmaster` for `ComputerName`.
-- **IOC sweeps** (CD-013, CD-017, CD-026, CD-029, CD-034) go stale quickly. Keep lookbacks short and re-check indicators before blocking.
+- **IOC sweeps** (CD-013, CD-017, CD-026, CD-029, CD-034, CD-040) go stale quickly. Keep lookbacks short and re-check indicators before blocking.
 - Appliances (Barracuda, SonicWall, Fortinet, Synology, SAP gateways, Check Point, vCenter, ESXi, Cisco Expressway, F5 BIG-IP) often run no EDR agent; check their own logs.
 - Every query is a hunting starting point, not a tuned production detection. Baseline, tune and test before use.
 
