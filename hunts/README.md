@@ -7,6 +7,19 @@ Full CVE index and run order: [main README](../README.md).
 ## Hunt index (newest first)
 
 
+### Tuesday, Nov 24, 2026
+
+| ID | Hunt | Category | Platforms |
+|---|---|---|---|
+| [CD-044](CD-044-cve-exposure-2026-11-24.md) | CVE Exposure Check: Nov 24 Briefing | Exposure / Vulnerability | Defender + CrowdStrike |
+| [CD-043](CD-043-n-able-mail-assure-ldap-sync-ssrf-cve-2026-134624.md) | N-able Mail Assure / SpamExperts LDAP Sync Abuse (CVE-2026-134624) | Initial Access / Supply Chain | Defender + CrowdStrike |
+| [CD-042](CD-042-azure-apim-classic-secret-exposure-equinor-skagerak.md) | Azure API Management Classic: Secret Reads and Use of Exposed Credentials (Equinor / Skagerak Energi) | Cloud / Credential Access | Sentinel + Defender + CrowdStrike NG-SIEM |
+| [CD-030](CD-030-python-startup-persistence-monai-label-ai-agent.md) | Python Startup-File Persistence and Reverse Shells *(reused: MONAI Label CVE-2026-133968, now KEV)* | Persistence / Execution | Defender + CrowdStrike |
+| [CD-040](CD-040-autonomous-ai-pentest-framework-intrusion-cairn-iocs-spray.md) | Autonomous AI Pentest-Framework Intrusions *(reused: Cairn)* | Initial Access / Credential Access | Sentinel + Defender + CrowdStrike |
+| [CD-039](CD-039-iis-w3wp-idunno-anticsrf-deserialization-cve-2026-131914.md) | IIS Worker Process Exploitation via Idunno.AntiCsrf *(reused; still no patch)* | Initial Access / Exploitation | Defender + Sentinel + CrowdStrike |
+| [CD-001](CD-001-outlook-external-smb-ntlm-leak.md) | Outlook Connecting to External SMB *(reused; KEV due today)* | Credential Access | Defender + CrowdStrike |
+| [CD-008](CD-008-ransomware-precursors.md) | Ransomware Precursors *(reused)* | Impact | Defender + CrowdStrike |
+
 ### Monday, Nov 23, 2026
 
 | ID | Hunt | Category | Platforms |

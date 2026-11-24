@@ -6,6 +6,19 @@ Each hunt is one Markdown file with the query name, what it hunts for, the threa
 
 ## Hunt index (newest first)
 
+### Tuesday, Nov 24, 2026
+
+| ID | Hunt | Category | Platforms |
+|---|---|---|---|
+| [CD-044](hunts/CD-044-cve-exposure-2026-11-24.md) | CVE Exposure Check: Nov 24 Briefing | Exposure / Vulnerability | Defender + CrowdStrike |
+| [CD-043](hunts/CD-043-n-able-mail-assure-ldap-sync-ssrf-cve-2026-134624.md) | N-able Mail Assure / SpamExperts LDAP Sync Abuse (CVE-2026-134624) | Initial Access / Supply Chain | Defender + CrowdStrike |
+| [CD-042](hunts/CD-042-azure-apim-classic-secret-exposure-equinor-skagerak.md) | Azure API Management Classic: Secret Reads and Use of Exposed Credentials (Equinor / Skagerak Energi) | Cloud / Credential Access | Sentinel + Defender + CrowdStrike NG-SIEM |
+| [CD-030](hunts/CD-030-python-startup-persistence-monai-label-ai-agent.md) | Python Startup-File Persistence and Reverse Shells *(reused: MONAI Label CVE-2026-133968, now KEV)* | Persistence / Execution | Defender + CrowdStrike |
+| [CD-040](hunts/CD-040-autonomous-ai-pentest-framework-intrusion-cairn-iocs-spray.md) | Autonomous AI Pentest-Framework Intrusions *(reused: Cairn)* | Initial Access / Credential Access | Sentinel + Defender + CrowdStrike |
+| [CD-039](hunts/CD-039-iis-w3wp-idunno-anticsrf-deserialization-cve-2026-131914.md) | IIS Worker Process Exploitation via Idunno.AntiCsrf *(reused; still no patch)* | Initial Access / Exploitation | Defender + Sentinel + CrowdStrike |
+| [CD-001](hunts/CD-001-outlook-external-smb-ntlm-leak.md) | Outlook Connecting to External SMB *(reused; KEV due today)* | Credential Access | Defender + CrowdStrike |
+| [CD-008](hunts/CD-008-ransomware-precursors.md) | Ransomware Precursors *(reused)* | Impact | Defender + CrowdStrike |
+
 ### Monday, Nov 23, 2026
 
 | ID | Hunt | Category | Platforms |
@@ -98,6 +111,17 @@ Each hunt is one Markdown file with the query name, what it hunts for, the threa
 | [CD-001](hunts/CD-001-outlook-external-smb-ntlm-leak.md) | Outlook Connecting to External SMB (NTLM Hash Leak) | Credential Access | Defender + CrowdStrike |
 
 ## CVE index (newest first)
+
+### 2026-11-24
+
+| CVE | Product / issue | Hunts |
+|---|---|---|
+| No CVE (MZK9-GH0) | Azure API Management Classic secret exposure; behind Equinor and Skagerak Energi (**exploited**, NSM / Microsoft) | CD-042 |
+| CVE-2026-134624 | N-able Mail Assure LDAP sync SSRF (**KEV Nov 23**, due Nov 26) | CD-043, CD-044 |
+| CVE-2026-133968 | MONAI Label path traversal RCE, Cairn AI agents (**KEV Nov 23**, due Nov 26) | CD-030, CD-044 |
+| CVE-2026-124194, CVE-2026-125350 | Outlook spoofing, Chrome XML use-after-free (KEV, **due today, Nov 24**; Outlook EPSS 0.019 to 0.249) | CD-001, CD-044 |
+| CVE-2026-115731 | Puppet Server (KEV, due Dec 1; EPSS 0.012 to 0.128) | CD-016, CD-044 |
+| CVE-2021-3199, CVE-2026-45247, CVE-2026-5430, CVE-2024-21410 | ONLYOFFICE, Mirasvit Magento, WSO2 API Manager, Exchange NTLM relay (KEV; EPSS rising) | CD-044 |
 
 ### 2026-11-23
 
@@ -219,8 +243,8 @@ Each hunt is one Markdown file with the query name, what it hunts for, the threa
 
 ## Suggested run order
 
-1. The newest **CVE exposure check** (CD-041, then CD-038, CD-032, CD-028, CD-024, CD-023, CD-022), to see which hosts are affected at all.
-2. Hunts for confirmed-exploited threats: CD-039, CD-040, CD-029, CD-034, CD-035, CD-036, CD-025, CD-030, CD-026, CD-027, CD-016, CD-017, CD-019, CD-021, CD-012, CD-013, CD-003, CD-001.
+1. The newest **CVE exposure check** (CD-044, then CD-041, CD-038, CD-032, CD-028, CD-024, CD-023, CD-022), to see which hosts are affected at all.
+2. Hunts for confirmed-exploited threats: CD-042, CD-043, CD-039, CD-040, CD-029, CD-034, CD-035, CD-036, CD-025, CD-030, CD-026, CD-027, CD-016, CD-017, CD-019, CD-021, CD-012, CD-013, CD-003, CD-001.
 3. Public PoC or research demo, no exploitation reported yet: CD-033 (Upload2Shell), CD-037 (Tomcat cluster), CD-031 (Ruby2Shell, GitLab). Supply-chain checks: CD-018, CD-015, CD-009.
 4. Standing hunts: CD-008 (ransomware precursors), CD-007 (OT exposure), CD-020 and CD-004 (identity).
 
@@ -229,7 +253,7 @@ Each hunt is one Markdown file with the query name, what it hunts for, the threa
 ```
 CyberDetect/
 ├── README.md
-├── hunts/      one file per hunt (CD-001 … CD-041), with its own newest-first README index
+├── hunts/      one file per hunt (CD-001 … CD-044), with its own newest-first README index
 └── sigma/      vendor-agnostic Sigma rules
 ```
 
