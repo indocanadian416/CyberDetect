@@ -7,6 +7,21 @@ Full CVE index and run order: [main README](../README.md).
 ## Hunt index (newest first)
 
 
+### Wednesday, Nov 25, 2026 (daily briefing + healthcare)
+
+| ID | Hunt | Category | Platforms |
+|---|---|---|---|
+| [CD-054](CD-054-healthcare-exploited-cves-30d-redcap-monai-vpn.md) | Healthcare: Actively Exploited CVEs of the Last 30 Days (REDCap, MONAI Label, Remote Access, Firewall Managers) *(ad hoc)* | Exposure / Healthcare | Defender + CrowdStrike |
+| [CD-053](CD-053-cve-exposure-2026-11-25.md) | CVE Exposure Check: Nov 25 Briefing | Exposure / Vulnerability | Defender + CrowdStrike |
+| [CD-052](CD-052-mining-isr-plant-wellfield-ot-remote-access.md) | Mining / ISR Plant and Wellfield Control Networks: Unexpected Remote Access (Peninsula Energy, Lance) | OT / ICS | Defender + CrowdStrike |
+| [CD-051](CD-051-panos-php2shell-fragnesia-mgmt-root-cve-2026-46300.md) | PAN-OS Management Interface: PHP2Shell and Fragnesia Root Chain (CVE-2026-109618, CVE-2026-46300) | Initial Access / Privilege Escalation | Sentinel + CrowdStrike NG-SIEM |
+| [CD-050](CD-050-checkpoint-management-gt13-cve-2026-16232.md) | Check Point Security Management Server Intrusions by GT13 (CVE-2026-16232) | Initial Access / Defense Impairment | Sentinel + Defender + CrowdStrike |
+| [CD-039](CD-039-iis-w3wp-idunno-anticsrf-deserialization-cve-2026-131914.md) | IIS Worker Process Exploitation via Idunno.AntiCsrf *(reused; now KEV, due Nov 27)* | Initial Access / Exploitation | Defender + Sentinel + CrowdStrike |
+| [CD-026](CD-026-checkpoint-php2shell-tsga-esxi-wiper.md) | Check Point Gateway to ESXi Wiper (PHP2Shell) *(reused)* | Initial Access / Impact | Defender + Sentinel + CrowdStrike |
+| [CD-042](CD-042-azure-apim-classic-secret-exposure-equinor-skagerak.md) | Azure API Management Classic: Secret Reads *(reused)* | Cloud / Credential Access | Sentinel + Defender + CrowdStrike NG-SIEM |
+| [CD-007](CD-007-ot-industrial-protocols-to-public-ip.md) | OT: Industrial Protocols Going to Public IPs *(reused: Peninsula Energy)* | OT / ICS | Defender + CrowdStrike |
+| [CD-008](CD-008-ransomware-precursors.md) | Ransomware Precursors *(reused)* | Impact | Defender + CrowdStrike |
+
 ### Wednesday, Nov 25, 2026 (ARTEX special)
 
 | ID | Hunt | Category | Platforms |

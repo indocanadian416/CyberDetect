@@ -6,6 +6,21 @@ Each hunt is one Markdown file with the query name, what it hunts for, the threa
 
 ## Hunt index (newest first)
 
+### Wednesday, Nov 25, 2026 (daily briefing + healthcare)
+
+| ID | Hunt | Category | Platforms |
+|---|---|---|---|
+| [CD-054](hunts/CD-054-healthcare-exploited-cves-30d-redcap-monai-vpn.md) | Healthcare: Actively Exploited CVEs of the Last 30 Days (REDCap, MONAI Label, Remote Access, Firewall Managers) *(ad hoc)* | Exposure / Healthcare | Defender + CrowdStrike |
+| [CD-053](hunts/CD-053-cve-exposure-2026-11-25.md) | CVE Exposure Check: Nov 25 Briefing | Exposure / Vulnerability | Defender + CrowdStrike |
+| [CD-052](hunts/CD-052-mining-isr-plant-wellfield-ot-remote-access.md) | Mining / ISR Plant and Wellfield Control Networks: Unexpected Remote Access (Peninsula Energy, Lance) | OT / ICS | Defender + CrowdStrike |
+| [CD-051](hunts/CD-051-panos-php2shell-fragnesia-mgmt-root-cve-2026-46300.md) | PAN-OS Management Interface: PHP2Shell and Fragnesia Root Chain (CVE-2026-109618, CVE-2026-46300) | Initial Access / Privilege Escalation | Sentinel + CrowdStrike NG-SIEM |
+| [CD-050](hunts/CD-050-checkpoint-management-gt13-cve-2026-16232.md) | Check Point Security Management Server Intrusions by GT13 (CVE-2026-16232) | Initial Access / Defense Impairment | Sentinel + Defender + CrowdStrike |
+| [CD-039](hunts/CD-039-iis-w3wp-idunno-anticsrf-deserialization-cve-2026-131914.md) | IIS Worker Process Exploitation via Idunno.AntiCsrf *(reused; now KEV, due Nov 27)* | Initial Access / Exploitation | Defender + Sentinel + CrowdStrike |
+| [CD-026](hunts/CD-026-checkpoint-php2shell-tsga-esxi-wiper.md) | Check Point Gateway to ESXi Wiper (PHP2Shell) *(reused)* | Initial Access / Impact | Defender + Sentinel + CrowdStrike |
+| [CD-042](hunts/CD-042-azure-apim-classic-secret-exposure-equinor-skagerak.md) | Azure API Management Classic: Secret Reads *(reused)* | Cloud / Credential Access | Sentinel + Defender + CrowdStrike NG-SIEM |
+| [CD-007](hunts/CD-007-ot-industrial-protocols-to-public-ip.md) | OT: Industrial Protocols Going to Public IPs *(reused: Peninsula Energy)* | OT / ICS | Defender + CrowdStrike |
+| [CD-008](hunts/CD-008-ransomware-precursors.md) | Ransomware Precursors *(reused)* | Impact | Defender + CrowdStrike |
+
 ### Wednesday, Nov 25, 2026 (ARTEX special)
 
 | ID | Hunt | Category | Platforms |
@@ -122,6 +137,17 @@ Each hunt is one Markdown file with the query name, what it hunts for, the threa
 | [CD-001](hunts/CD-001-outlook-external-smb-ntlm-leak.md) | Outlook Connecting to External SMB (NTLM Hash Leak) | Credential Access | Defender + CrowdStrike |
 
 ## CVE index (newest first)
+
+### 2026-11-25
+
+| CVE | Product / issue | Hunts |
+|---|---|---|
+| CVE-2026-90817, CVE-2026-133968 + 13 more | Healthcare set: REDCap and MONAI Label (KEV, exploited), hospital VPNs (Ivanti, SonicWall, Cisco ASA), Cisco FMC (Interlock), PHP2Shell, Confluence/Axis, AntiCsrf, vCenter, Synology, Outlook, WordPress, Drupal | CD-054 |
+| CVE-2026-16232, CVE-2026-61500 | Check Point SmartConsole auth bypass (KEV) and Rejetto HFS session forgery; GT13 campaign against 24 management servers incl. energy and mining (**exploited**, GreyNoise) | CD-050, CD-053 |
+| CVE-2026-109618, CVE-2026-109619, CVE-2026-46300 | PAN-OS PHP2Shell + Fragnesia root chain (KEV; **exploited**, PAN-SA-2026-0015) | CD-051, CD-026, CD-053 |
+| CVE-2026-131914, CVE-2026-132165, CVE-2026-132224 | Idunno.AntiCsrf, Drupal Core installer, Optimizely Web Experimentation (**KEV Nov 24**, due Nov 27) | CD-039, CD-053 |
+| CVE-2026-20131, CVE-2026-20963, CVE-2025-68461, CVE-2026-20045 | Cisco FMC, SharePoint, Roundcube, Cisco Unified CM (KEV; EPSS jumped Nov 24) | CD-053 |
+| No CVE | Peninsula Energy Lance uranium ISR plant and wellfield control systems incident (confirmed, cause unknown) | CD-052, CD-007 |
 
 ### 2026-11-24
 
@@ -254,17 +280,17 @@ Each hunt is one Markdown file with the query name, what it hunts for, the threa
 
 ## Suggested run order
 
-1. The newest **CVE exposure check** (CD-044, then CD-041, CD-038, CD-032, CD-028, CD-024, CD-023, CD-022), to see which hosts are affected at all.
-2. Hunts for confirmed-exploited threats: CD-046, CD-045, CD-047, CD-048, CD-049 (ARTEX, run as a set), CD-042, CD-043, CD-039, CD-040, CD-029, CD-034, CD-035, CD-036, CD-025, CD-030, CD-026, CD-027, CD-016, CD-017, CD-019, CD-021, CD-012, CD-013, CD-003, CD-001.
+1. The newest **CVE exposure check** (CD-053, healthcare CD-054, then CD-044, CD-041, CD-038, CD-032, CD-028, CD-024, CD-023, CD-022), to see which hosts are affected at all.
+2. Hunts for confirmed-exploited threats: CD-046, CD-045, CD-047, CD-048, CD-049 (ARTEX, run as a set), CD-050, CD-051, CD-042, CD-043, CD-039, CD-040, CD-029, CD-034, CD-035, CD-036, CD-025, CD-030, CD-026, CD-027, CD-016, CD-017, CD-019, CD-021, CD-012, CD-013, CD-003, CD-001.
 3. Public PoC or research demo, no exploitation reported yet: CD-033 (Upload2Shell), CD-037 (Tomcat cluster), CD-031 (Ruby2Shell, GitLab). Supply-chain checks: CD-018, CD-015, CD-009.
-4. Standing hunts: CD-008 (ransomware precursors), CD-007 (OT exposure), CD-020 and CD-004 (identity).
+4. Standing hunts: CD-008 (ransomware precursors), CD-052 and CD-007 (OT remote access and exposure), CD-020 and CD-004 (identity).
 
 ## Repository layout
 
 ```
 CyberDetect/
 ├── README.md
-├── hunts/      one file per hunt (CD-001 … CD-049), with its own newest-first README index
+├── hunts/      one file per hunt (CD-001 … CD-054), with its own newest-first README index
 └── sigma/      vendor-agnostic Sigma rules
 ```
 
