@@ -6,6 +6,17 @@ Each hunt is one Markdown file with the query name, what it hunts for, the threa
 
 ## Hunt index (newest first)
 
+### Wednesday, Nov 25, 2026 (ARTEX special)
+
+| ID | Hunt | Category | Platforms |
+|---|---|---|---|
+| [CD-045](hunts/CD-045-artex-agentic-framework-user-agents.md) | ARTEX and Agentic Offensive Framework User Agents (artex-pentest, artex-audit, norma/0.4, ARTeX-authorized-pentest and related) | Reconnaissance / Initial Access | Sentinel + Defender + CrowdStrike NG-SIEM |
+| [CD-046](hunts/CD-046-artex-agentic-attack-infrastructure-ip-sweep-wiz.md) | ARTEX Agentic-Attack Infrastructure Sweep (Wiz "Agentic attacks in the wild" IPs + Datadog / Corelight) | Initial Access / Credential Access | Sentinel + Defender + CrowdStrike |
+| [CD-047](hunts/CD-047-artex-self-labelled-artifacts-cloud-agent-behaviour.md) | ARTEX Self-Labelled Artifacts (pentest-\*, csai-\*, artex-probe-\*, ArtexProbe) and Agent Cloud Behaviour in AWS / Entra | Persistence / Discovery | Sentinel + Defender + CrowdStrike NG-SIEM |
+| [CD-048](hunts/CD-048-artex-kubernetes-node-escape-ld-so-preload-rootkit.md) | Agentic Kubernetes Node Escape and Persistence (root-mount pods, nsenter, kubelet PKI, `ld.so.preload` rootkit) | Privilege Escalation / Persistence | Sentinel + Defender + CrowdStrike |
+| [CD-049](hunts/CD-049-artex-console-on-your-hosts-ai-key-session-harvesting.md) | ARTEX Running Inside Your Estate and AI Key / Coding-Assistant Session Harvesting | Execution / Credential Access | Defender + CrowdStrike |
+| [CD-040](hunts/CD-040-autonomous-ai-pentest-framework-intrusion-cairn-iocs-spray.md) | Autonomous AI Pentest-Framework Intrusions *(reused: same spraying and fast-admin logic applies to ARTEX)* | Initial Access / Credential Access | Sentinel + Defender + CrowdStrike |
+
 ### Tuesday, Nov 24, 2026
 
 | ID | Hunt | Category | Platforms |
@@ -244,7 +255,7 @@ Each hunt is one Markdown file with the query name, what it hunts for, the threa
 ## Suggested run order
 
 1. The newest **CVE exposure check** (CD-044, then CD-041, CD-038, CD-032, CD-028, CD-024, CD-023, CD-022), to see which hosts are affected at all.
-2. Hunts for confirmed-exploited threats: CD-042, CD-043, CD-039, CD-040, CD-029, CD-034, CD-035, CD-036, CD-025, CD-030, CD-026, CD-027, CD-016, CD-017, CD-019, CD-021, CD-012, CD-013, CD-003, CD-001.
+2. Hunts for confirmed-exploited threats: CD-046, CD-045, CD-047, CD-048, CD-049 (ARTEX, run as a set), CD-042, CD-043, CD-039, CD-040, CD-029, CD-034, CD-035, CD-036, CD-025, CD-030, CD-026, CD-027, CD-016, CD-017, CD-019, CD-021, CD-012, CD-013, CD-003, CD-001.
 3. Public PoC or research demo, no exploitation reported yet: CD-033 (Upload2Shell), CD-037 (Tomcat cluster), CD-031 (Ruby2Shell, GitLab). Supply-chain checks: CD-018, CD-015, CD-009.
 4. Standing hunts: CD-008 (ransomware precursors), CD-007 (OT exposure), CD-020 and CD-004 (identity).
 
@@ -253,7 +264,7 @@ Each hunt is one Markdown file with the query name, what it hunts for, the threa
 ```
 CyberDetect/
 ├── README.md
-├── hunts/      one file per hunt (CD-001 … CD-044), with its own newest-first README index
+├── hunts/      one file per hunt (CD-001 … CD-049), with its own newest-first README index
 └── sigma/      vendor-agnostic Sigma rules
 ```
 
@@ -261,9 +272,9 @@ New hunts get the next CD number and are listed at the top of the index (here an
 
 ## Before you run a query
 
-- **Defender:** table names follow the Defender XDR advanced hunting schema. `EntraIdSpnSignInEvents` needs Entra ID P2. Queries labelled *Sentinel* need the matching data connector (Entra ID, AWS CloudTrail, Windows Security Events).
+- **Defender:** table names follow the Defender XDR advanced hunting schema. `EntraIdSpnSignInEvents` needs Entra ID P2. `MicrosoftGraphActivityLogs` and `AKSAudit` need their diagnostic settings enabled (CD-045, CD-048). Queries labelled *Sentinel* need the matching data connector (Entra ID, AWS CloudTrail, Windows Security Events).
 - **CrowdStrike:** event names were checked against the Falcon Events Data Dictionary; some field names are unverified. Confirm fields in your Falcon console. Network events carry no host name, so several queries join `aidmaster` for `ComputerName`.
-- **IOC sweeps** (CD-013, CD-017, CD-026, CD-029, CD-034, CD-040) go stale quickly. Keep lookbacks short and re-check indicators before blocking.
+- **IOC sweeps** (CD-013, CD-017, CD-026, CD-029, CD-034, CD-040, CD-046) go stale quickly. Keep lookbacks short and re-check indicators before blocking.
 - Appliances (Barracuda, SonicWall, Fortinet, Synology, SAP gateways, Check Point, vCenter, ESXi, Cisco Expressway, F5 BIG-IP) often run no EDR agent; check their own logs.
 - Every query is a hunting starting point, not a tuned production detection. Baseline, tune and test before use.
 

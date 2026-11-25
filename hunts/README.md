@@ -7,6 +7,17 @@ Full CVE index and run order: [main README](../README.md).
 ## Hunt index (newest first)
 
 
+### Wednesday, Nov 25, 2026 (ARTEX special)
+
+| ID | Hunt | Category | Platforms |
+|---|---|---|---|
+| [CD-045](CD-045-artex-agentic-framework-user-agents.md) | ARTEX and Agentic Offensive Framework User Agents (artex-pentest, artex-audit, norma/0.4, ARTeX-authorized-pentest and related) | Reconnaissance / Initial Access | Sentinel + Defender + CrowdStrike NG-SIEM |
+| [CD-046](CD-046-artex-agentic-attack-infrastructure-ip-sweep-wiz.md) | ARTEX Agentic-Attack Infrastructure Sweep (Wiz "Agentic attacks in the wild" IPs + Datadog / Corelight) | Initial Access / Credential Access | Sentinel + Defender + CrowdStrike |
+| [CD-047](CD-047-artex-self-labelled-artifacts-cloud-agent-behaviour.md) | ARTEX Self-Labelled Artifacts (pentest-\*, csai-\*, artex-probe-\*, ArtexProbe) and Agent Cloud Behaviour in AWS / Entra | Persistence / Discovery | Sentinel + Defender + CrowdStrike NG-SIEM |
+| [CD-048](CD-048-artex-kubernetes-node-escape-ld-so-preload-rootkit.md) | Agentic Kubernetes Node Escape and Persistence (root-mount pods, nsenter, kubelet PKI, `ld.so.preload` rootkit) | Privilege Escalation / Persistence | Sentinel + Defender + CrowdStrike |
+| [CD-049](CD-049-artex-console-on-your-hosts-ai-key-session-harvesting.md) | ARTEX Running Inside Your Estate and AI Key / Coding-Assistant Session Harvesting | Execution / Credential Access | Defender + CrowdStrike |
+| [CD-040](CD-040-autonomous-ai-pentest-framework-intrusion-cairn-iocs-spray.md) | Autonomous AI Pentest-Framework Intrusions *(reused: same spraying and fast-admin logic applies to ARTEX)* | Initial Access / Credential Access | Sentinel + Defender + CrowdStrike |
+
 ### Tuesday, Nov 24, 2026
 
 | ID | Hunt | Category | Platforms |
