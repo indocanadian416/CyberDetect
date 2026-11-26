@@ -7,6 +7,21 @@ Full CVE index and run order: [main README](../README.md).
 ## Hunt index (newest first)
 
 
+### Thursday, Nov 26, 2026
+
+| ID | Hunt | Category | Platforms |
+|---|---|---|---|
+| [CD-059](CD-059-cve-exposure-2026-11-26.md) | CVE Exposure Check: Nov 26 Briefing | Exposure / Vulnerability | Defender + CrowdStrike |
+| [CD-058](CD-058-vpn-intrusion-to-cloud-exfil-smart-meter-utility-vendors.md) | VPN Intrusion to Cloud-Storage Exfiltration (Osaki Electric Smart-Meter Ransomware, Uplight Utility Data Claim) | Initial Access / Exfiltration | Defender + Sentinel + CrowdStrike |
+| [CD-057](CD-057-juniper-ssc-salt-and-mitel-micollab-awv-appliance-rce.md) | Juniper Session Smart Conductor Salt Injection and Mitel MiCollab AWV Compromise (CVE-2026-103406, CVE-2026-133323 and related) | Initial Access / Network Infrastructure | Sentinel + CrowdStrike NG-SIEM |
+| [CD-056](CD-056-xen-orchestra-auth-bypass-cve-2026-133469-ustar-persistence.md) | Xen Orchestra Authentication Bypass and XCP-ng Host Persistence (CVE-2026-133469) | Initial Access / Persistence | Sentinel + Defender + CrowdStrike |
+| [CD-055](CD-055-danfoss-ak-sm-800a-xml-cgi-abuse-kev-cve-2025-41450.md) | Danfoss AK-SM 800A Supervisory Controllers: xml.cgi Auth Bypass and Unexpected Access (CVE-2025-41450, CVE-2023-25914/25915, CVE-2026-129713) | OT / ICS | Sentinel + Defender + CrowdStrike |
+| [CD-050](CD-050-checkpoint-management-gt13-cve-2026-16232.md) | Check Point Security Management Server Intrusions by GT13 *(reused; EPSS now 0.80)* | Initial Access / Defense Impairment | Sentinel + Defender + CrowdStrike |
+| [CD-052](CD-052-mining-isr-plant-wellfield-ot-remote-access.md) | Mining / ISR Plant and Wellfield Control Networks: Unexpected Remote Access *(reused)* | OT / ICS | Defender + CrowdStrike |
+| [CD-045](CD-045-artex-agentic-framework-user-agents.md) | ARTEX and Agentic Offensive Framework User Agents *(reused: Italy / Switzerland AI-agent warnings)* | Reconnaissance / Initial Access | Sentinel + Defender + CrowdStrike NG-SIEM |
+| [CD-007](CD-007-ot-industrial-protocols-to-public-ip.md) | OT: Industrial Protocols Going to Public IPs *(reused)* | OT / ICS | Defender + CrowdStrike |
+| [CD-008](CD-008-ransomware-precursors.md) | Ransomware Precursors *(reused: Osaki pattern)* | Impact | Defender + CrowdStrike |
+
 ### Wednesday, Nov 25, 2026 (daily briefing + healthcare)
 
 | ID | Hunt | Category | Platforms |

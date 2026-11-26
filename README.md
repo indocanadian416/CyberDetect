@@ -6,6 +6,21 @@ Each hunt is one Markdown file with the query name, what it hunts for, the threa
 
 ## Hunt index (newest first)
 
+### Thursday, Nov 26, 2026
+
+| ID | Hunt | Category | Platforms |
+|---|---|---|---|
+| [CD-059](hunts/CD-059-cve-exposure-2026-11-26.md) | CVE Exposure Check: Nov 26 Briefing | Exposure / Vulnerability | Defender + CrowdStrike |
+| [CD-058](hunts/CD-058-vpn-intrusion-to-cloud-exfil-smart-meter-utility-vendors.md) | VPN Intrusion to Cloud-Storage Exfiltration (Osaki Electric Smart-Meter Ransomware, Uplight Utility Data Claim) | Initial Access / Exfiltration | Defender + Sentinel + CrowdStrike |
+| [CD-057](hunts/CD-057-juniper-ssc-salt-and-mitel-micollab-awv-appliance-rce.md) | Juniper Session Smart Conductor Salt Injection and Mitel MiCollab AWV Compromise (CVE-2026-103406, CVE-2026-133323 and related) | Initial Access / Network Infrastructure | Sentinel + CrowdStrike NG-SIEM |
+| [CD-056](hunts/CD-056-xen-orchestra-auth-bypass-cve-2026-133469-ustar-persistence.md) | Xen Orchestra Authentication Bypass and XCP-ng Host Persistence (CVE-2026-133469) | Initial Access / Persistence | Sentinel + Defender + CrowdStrike |
+| [CD-055](hunts/CD-055-danfoss-ak-sm-800a-xml-cgi-abuse-kev-cve-2025-41450.md) | Danfoss AK-SM 800A Supervisory Controllers: xml.cgi Auth Bypass and Unexpected Access (CVE-2025-41450, CVE-2023-25914/25915, CVE-2026-129713) | OT / ICS | Sentinel + Defender + CrowdStrike |
+| [CD-050](hunts/CD-050-checkpoint-management-gt13-cve-2026-16232.md) | Check Point Security Management Server Intrusions by GT13 *(reused; EPSS now 0.80)* | Initial Access / Defense Impairment | Sentinel + Defender + CrowdStrike |
+| [CD-052](hunts/CD-052-mining-isr-plant-wellfield-ot-remote-access.md) | Mining / ISR Plant and Wellfield Control Networks: Unexpected Remote Access *(reused)* | OT / ICS | Defender + CrowdStrike |
+| [CD-045](hunts/CD-045-artex-agentic-framework-user-agents.md) | ARTEX and Agentic Offensive Framework User Agents *(reused: Italy / Switzerland AI-agent warnings)* | Reconnaissance / Initial Access | Sentinel + Defender + CrowdStrike NG-SIEM |
+| [CD-007](hunts/CD-007-ot-industrial-protocols-to-public-ip.md) | OT: Industrial Protocols Going to Public IPs *(reused)* | OT / ICS | Defender + CrowdStrike |
+| [CD-008](hunts/CD-008-ransomware-precursors.md) | Ransomware Precursors *(reused: Osaki pattern)* | Impact | Defender + CrowdStrike |
+
 ### Wednesday, Nov 25, 2026 (daily briefing + healthcare)
 
 | ID | Hunt | Category | Platforms |
@@ -137,6 +152,19 @@ Each hunt is one Markdown file with the query name, what it hunts for, the threa
 | [CD-001](hunts/CD-001-outlook-external-smb-ntlm-leak.md) | Outlook Connecting to External SMB (NTLM Hash Leak) | Credential Access | Defender + CrowdStrike |
 
 ## CVE index (newest first)
+
+### 2026-11-26
+
+| CVE | Product / issue | Hunts |
+|---|---|---|
+| CVE-2023-25914, CVE-2023-25915, CVE-2025-41450 | Danfoss AK-SM 800A supervisory controllers (**KEV Nov 25**; due Nov 28 / Dec 9; European refrigeration tampering) | CD-055, CD-059 |
+| CVE-2026-129713 | Danfoss AK-SM 8xxA unauthenticated stack overflow (ICSA-26-328-03; no fix until 5.5.x) | CD-055, CD-059 |
+| CVE-2026-133469 | Vates Xen Orchestra empty-JSON cookie auth bypass (**KEV Nov 25**, due Nov 28; exploited) | CD-056, CD-059 |
+| CVE-2026-103406 | Juniper Session Smart Conductor salt minion ID root RCE (**KEV Nov 25**, due Nov 28) | CD-057, CD-059 |
+| CVE-2026-133323, CVE-2026-133303, CVE-2026-133275, CVE-2026-133311, CVE-2026-133324 | Mitel MiCollab AWV chain (**KEV Nov 25**, due Nov 28; fixed 10.3.0.18) | CD-057, CD-059 |
+| CVE-2026-127280 | AutomationDirect C-More EA9 project-file heap overflow (ICSA-26-328-01) | CD-059 |
+| CVE-2026-16232 | Check Point SmartConsole (GT13; EPSS 0.035 to 0.80 this week) | CD-050, CD-059 |
+| No CVE | Osaki Electric smart-meter ransomware (VPN entry, cloud exfil); Uplight utility data claim (N0n, unverified) | CD-058, CD-008 |
 
 ### 2026-11-25
 
@@ -280,17 +308,17 @@ Each hunt is one Markdown file with the query name, what it hunts for, the threa
 
 ## Suggested run order
 
-1. The newest **CVE exposure check** (CD-053, healthcare CD-054, then CD-044, CD-041, CD-038, CD-032, CD-028, CD-024, CD-023, CD-022), to see which hosts are affected at all.
-2. Hunts for confirmed-exploited threats: CD-046, CD-045, CD-047, CD-048, CD-049 (ARTEX, run as a set), CD-050, CD-051, CD-042, CD-043, CD-039, CD-040, CD-029, CD-034, CD-035, CD-036, CD-025, CD-030, CD-026, CD-027, CD-016, CD-017, CD-019, CD-021, CD-012, CD-013, CD-003, CD-001.
+1. The newest **CVE exposure check** (CD-059, CD-053, healthcare CD-054, then CD-044, CD-041, CD-038, CD-032, CD-028, CD-024, CD-023, CD-022), to see which hosts are affected at all.
+2. Hunts for confirmed-exploited threats: CD-055, CD-056, CD-057, CD-046, CD-045, CD-047, CD-048, CD-049 (ARTEX, run as a set), CD-050, CD-051, CD-042, CD-043, CD-039, CD-040, CD-029, CD-034, CD-035, CD-036, CD-025, CD-030, CD-026, CD-027, CD-016, CD-017, CD-019, CD-021, CD-012, CD-013, CD-003, CD-001.
 3. Public PoC or research demo, no exploitation reported yet: CD-033 (Upload2Shell), CD-037 (Tomcat cluster), CD-031 (Ruby2Shell, GitLab). Supply-chain checks: CD-018, CD-015, CD-009.
-4. Standing hunts: CD-008 (ransomware precursors), CD-052 and CD-007 (OT remote access and exposure), CD-020 and CD-004 (identity).
+4. Standing hunts: CD-058 (VPN to cloud exfil), CD-008 (ransomware precursors), CD-052 and CD-007 (OT remote access and exposure), CD-020 and CD-004 (identity).
 
 ## Repository layout
 
 ```
 CyberDetect/
 ├── README.md
-├── hunts/      one file per hunt (CD-001 … CD-054), with its own newest-first README index
+├── hunts/      one file per hunt (CD-001 … CD-059), with its own newest-first README index
 └── sigma/      vendor-agnostic Sigma rules
 ```
 
