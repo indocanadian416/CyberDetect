@@ -7,6 +7,22 @@ Full CVE index and run order: [main README](../README.md).
 ## Hunt index (newest first)
 
 
+### Friday, Nov 27, 2026
+
+| ID | Hunt | Category | Platforms |
+|---|---|---|---|
+| [CD-064](CD-064-cve-exposure-2026-11-27.md) | CVE Exposure Check: Nov 27 Briefing | Exposure / Vulnerability | Defender + CrowdStrike |
+| [CD-063](CD-063-volant-manticore-kuboshell-pinata-ipfs-rogue-rmm.md) | Volant Manticore: KuboShell IPFS/Pinata Backdoor, Rogue NetLock / N-able / MeshCentral RMM and Published IOCs | Initial Access / Command and Control | Defender + CrowdStrike |
+| [CD-062](CD-062-nfs2root-linux-nfsd-pre-auth-root-cve-2026-99362.md) | NFS2ROOT: Linux nfsd Pre-Auth Remote Root Exposure and Post-Exploit Signs (CVE-2026-99362) | Exposure / Lateral Movement | Defender + CrowdStrike |
+| [CD-061](CD-061-drupal-installer-takeover-cve-2026-136716-132165.md) | Drupal Installer Takeover: Exposed install.php and User 1 Changes (CVE-2026-136716, CVE-2026-132165) | Initial Access / Persistence | Sentinel + Defender + CrowdStrike |
+| [CD-060](CD-060-geoserver-wfs-stored-query-rce-chain-cve-2026-120705-129243.md) | GeoServer WFS Stored-Query RCE Chain (CVE-2026-120705, CVE-2026-129243, CVE-2026-129245) | Initial Access / Exploitation | Sentinel + Defender + CrowdStrike |
+| [CD-052](CD-052-mining-isr-plant-wellfield-ot-remote-access.md) | Mining / ISR Plant and Wellfield Control Networks: Unexpected Remote Access *(reused: Lance still suspended)* | OT / ICS | Defender + CrowdStrike |
+| [CD-058](CD-058-vpn-intrusion-to-cloud-exfil-smart-meter-utility-vendors.md) | VPN Intrusion to Cloud-Storage Exfiltration *(reused: Qilin smart-meter listing, Uplight countdown)* | Initial Access / Exfiltration | Defender + Sentinel + CrowdStrike |
+| [CD-039](CD-039-iis-w3wp-idunno-anticsrf-deserialization-cve-2026-131914.md) | IIS Worker Process Exploitation via Idunno.AntiCsrf *(reused; KEV due today)* | Initial Access / Exploitation | Defender + Sentinel + CrowdStrike |
+| [CD-055](CD-055-danfoss-ak-sm-800a-xml-cgi-abuse-kev-cve-2025-41450.md) | Danfoss AK-SM 800A Supervisory Controllers *(reused; KEV due Nov 28)* | OT / ICS | Sentinel + Defender + CrowdStrike |
+| [CD-025](CD-025-vcenter-vmdir-auth-bypass-armory-castle.md) | vCenter Directory Service Abuse (ARMORY CASTLE) *(reused; EPSS rising)* | Initial Access / Credential Access | Defender + Sentinel + CrowdStrike |
+| [CD-024](CD-024-cve-exposure-2026-11-19-java4shell.md) | CVE Exposure Check incl. Java4Shell *(reused; EPSS now 0.59)* | Exposure / Vulnerability | Defender + CrowdStrike |
+
 ### Thursday, Nov 26, 2026
 
 | ID | Hunt | Category | Platforms |

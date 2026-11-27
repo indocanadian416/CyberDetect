@@ -6,6 +6,22 @@ Each hunt is one Markdown file with the query name, what it hunts for, the threa
 
 ## Hunt index (newest first)
 
+### Friday, Nov 27, 2026
+
+| ID | Hunt | Category | Platforms |
+|---|---|---|---|
+| [CD-064](hunts/CD-064-cve-exposure-2026-11-27.md) | CVE Exposure Check: Nov 27 Briefing | Exposure / Vulnerability | Defender + CrowdStrike |
+| [CD-063](hunts/CD-063-volant-manticore-kuboshell-pinata-ipfs-rogue-rmm.md) | Volant Manticore: KuboShell IPFS/Pinata Backdoor, Rogue NetLock / N-able / MeshCentral RMM and Published IOCs | Initial Access / Command and Control | Defender + CrowdStrike |
+| [CD-062](hunts/CD-062-nfs2root-linux-nfsd-pre-auth-root-cve-2026-99362.md) | NFS2ROOT: Linux nfsd Pre-Auth Remote Root Exposure and Post-Exploit Signs (CVE-2026-99362) | Exposure / Lateral Movement | Defender + CrowdStrike |
+| [CD-061](hunts/CD-061-drupal-installer-takeover-cve-2026-136716-132165.md) | Drupal Installer Takeover: Exposed install.php and User 1 Changes (CVE-2026-136716, CVE-2026-132165) | Initial Access / Persistence | Sentinel + Defender + CrowdStrike |
+| [CD-060](hunts/CD-060-geoserver-wfs-stored-query-rce-chain-cve-2026-120705-129243.md) | GeoServer WFS Stored-Query RCE Chain (CVE-2026-120705, CVE-2026-129243, CVE-2026-129245) | Initial Access / Exploitation | Sentinel + Defender + CrowdStrike |
+| [CD-052](hunts/CD-052-mining-isr-plant-wellfield-ot-remote-access.md) | Mining / ISR Plant and Wellfield Control Networks: Unexpected Remote Access *(reused: Lance still suspended)* | OT / ICS | Defender + CrowdStrike |
+| [CD-058](hunts/CD-058-vpn-intrusion-to-cloud-exfil-smart-meter-utility-vendors.md) | VPN Intrusion to Cloud-Storage Exfiltration *(reused: Qilin smart-meter listing, Uplight countdown)* | Initial Access / Exfiltration | Defender + Sentinel + CrowdStrike |
+| [CD-039](hunts/CD-039-iis-w3wp-idunno-anticsrf-deserialization-cve-2026-131914.md) | IIS Worker Process Exploitation via Idunno.AntiCsrf *(reused; KEV due today)* | Initial Access / Exploitation | Defender + Sentinel + CrowdStrike |
+| [CD-055](hunts/CD-055-danfoss-ak-sm-800a-xml-cgi-abuse-kev-cve-2025-41450.md) | Danfoss AK-SM 800A Supervisory Controllers *(reused; KEV due Nov 28)* | OT / ICS | Sentinel + Defender + CrowdStrike |
+| [CD-025](hunts/CD-025-vcenter-vmdir-auth-bypass-armory-castle.md) | vCenter Directory Service Abuse (ARMORY CASTLE) *(reused; EPSS rising)* | Initial Access / Credential Access | Defender + Sentinel + CrowdStrike |
+| [CD-024](hunts/CD-024-cve-exposure-2026-11-19-java4shell.md) | CVE Exposure Check incl. Java4Shell *(reused; EPSS now 0.59)* | Exposure / Vulnerability | Defender + CrowdStrike |
+
 ### Thursday, Nov 26, 2026
 
 | ID | Hunt | Category | Platforms |
@@ -152,6 +168,18 @@ Each hunt is one Markdown file with the query name, what it hunts for, the threa
 | [CD-001](hunts/CD-001-outlook-external-smb-ntlm-leak.md) | Outlook Connecting to External SMB (NTLM Hash Leak) | Credential Access | Defender + CrowdStrike |
 
 ## CVE index (newest first)
+
+### 2026-11-27
+
+| CVE | Product / issue | Hunts |
+|---|---|---|
+| CVE-2026-120705, CVE-2026-129243, CVE-2026-129245, CVE-2026-129242, CVE-2026-129244, CVE-2026-120704 | GeoServer WFS stored-query unauthenticated RCE chain (**probed in the wild**, watchTowr Nov 25; Cyber Centre AV26-1207; fixed 3.0.2 / 2.28.6 / 2.27.7) | CD-060, CD-064 |
+| CVE-2026-136716, CVE-2026-132165 | Drupal core installer takeover, second fix (**exploited**, SA-CORE-2026-019, Nov 26) and Fail2Install (**KEV**, due Nov 27) | CD-061, CD-064 |
+| CVE-2026-99362 | Linux nfsd NFS2ROOT pre-auth remote root (no exploitation reported; RHSA-2026:103817 Nov 26) | CD-062, CD-064 |
+| CVE-2026-119055 | Schneider EcoStruxure Power Build Rapsody SSD-file use-after-free (ICSA-26-328-02; energy) | CD-064 |
+| CVE-2026-131914, CVE-2026-132224 | Idunno.AntiCsrf, Optimizely (**KEV**, due Nov 27) | CD-039, CD-064 |
+| CVE-2026-114938, CVE-2026-123890 | Java4Shell (EPSS 0.59), vCenter ARMORY CASTLE (KEV; EPSS 0.05) | CD-024, CD-025, CD-064 |
+| No CVE | Volant Manticore (Iran-nexus): KuboShell IPFS backdoor and rogue RMM (Check Point Nov 24) | CD-063 |
 
 ### 2026-11-26
 
@@ -308,9 +336,9 @@ Each hunt is one Markdown file with the query name, what it hunts for, the threa
 
 ## Suggested run order
 
-1. The newest **CVE exposure check** (CD-059, CD-053, healthcare CD-054, then CD-044, CD-041, CD-038, CD-032, CD-028, CD-024, CD-023, CD-022), to see which hosts are affected at all.
-2. Hunts for confirmed-exploited threats: CD-055, CD-056, CD-057, CD-046, CD-045, CD-047, CD-048, CD-049 (ARTEX, run as a set), CD-050, CD-051, CD-042, CD-043, CD-039, CD-040, CD-029, CD-034, CD-035, CD-036, CD-025, CD-030, CD-026, CD-027, CD-016, CD-017, CD-019, CD-021, CD-012, CD-013, CD-003, CD-001.
-3. Public PoC or research demo, no exploitation reported yet: CD-033 (Upload2Shell), CD-037 (Tomcat cluster), CD-031 (Ruby2Shell, GitLab). Supply-chain checks: CD-018, CD-015, CD-009.
+1. The newest **CVE exposure check** (CD-064, CD-059, CD-053, healthcare CD-054, then CD-044, CD-041, CD-038, CD-032, CD-028, CD-024, CD-023, CD-022), to see which hosts are affected at all.
+2. Hunts for confirmed-exploited threats: CD-060, CD-061, CD-063, CD-055, CD-056, CD-057, CD-046, CD-045, CD-047, CD-048, CD-049 (ARTEX, run as a set), CD-050, CD-051, CD-042, CD-043, CD-039, CD-040, CD-029, CD-034, CD-035, CD-036, CD-025, CD-030, CD-026, CD-027, CD-016, CD-017, CD-019, CD-021, CD-012, CD-013, CD-003, CD-001.
+3. Public PoC or research demo, no exploitation reported yet: CD-062 (NFS2ROOT), CD-033 (Upload2Shell), CD-037 (Tomcat cluster), CD-031 (Ruby2Shell, GitLab). Supply-chain checks: CD-018, CD-015, CD-009.
 4. Standing hunts: CD-058 (VPN to cloud exfil), CD-008 (ransomware precursors), CD-052 and CD-007 (OT remote access and exposure), CD-020 and CD-004 (identity).
 
 ## Repository layout
@@ -318,7 +346,7 @@ Each hunt is one Markdown file with the query name, what it hunts for, the threa
 ```
 CyberDetect/
 ├── README.md
-├── hunts/      one file per hunt (CD-001 … CD-059), with its own newest-first README index
+├── hunts/      one file per hunt (CD-001 … CD-064), with its own newest-first README index
 └── sigma/      vendor-agnostic Sigma rules
 ```
 
